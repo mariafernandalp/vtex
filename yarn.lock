@@ -1392,14 +1392,14 @@
     p-limit "^3.1.0"
     sanitize-html "^2.11.0"
 
-"@faststore/cli@4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@faststore/cli/-/cli-4.1.2.tgz#d733439075b10c758d1ddb8c14cb08f7fafa87c4"
-  integrity sha512-qI1YWROzDAjMDN70OkX9ErYhK+7sWlOO/xBTayDl50rQrH4P9m1gYKsb+mWiovMeigecyurTmsP5exxEcYy4uQ==
+"@faststore/cli@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@faststore/cli/-/cli-4.2.0.tgz#7eaaa8c08cadfe86bbd4a8924a36880a537291e6"
+  integrity sha512-jQ1jKCubuOjysoLsVuSLgEFypY1BZllwPCkILrWII7mXJGmjC50r8M3243nU8965XZCQ1vnTnj1mSlS1Xw2Qrw==
   dependencies:
     "@antfu/ni" "0.21.12"
     "@faststore/api" "4.1.1"
-    "@faststore/core" "4.1.2"
+    "@faststore/core" "4.2.0"
     "@graphql-codegen/cli" "6.1.1"
     "@graphql-tools/merge" "9.1.1"
     "@graphql-tools/utils" "10.10.1"
@@ -1428,10 +1428,10 @@
     react-intersection-observer "^8.32.5"
     react-swipeable "^7.0.0"
 
-"@faststore/core@4.1.2":
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/@faststore/core/-/core-4.1.2.tgz#001ce40f27a6807830257f011c9e23365e4ff700"
-  integrity sha512-nhxc9W5eZMbC6yY/HBD8RdzQiCeHRQS2ACA5atpiuWtGCfKAtAVXPHA3GNy0QicIZcxo7/5JBoXaryNHfK3q3w==
+"@faststore/core@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@faststore/core/-/core-4.2.0.tgz#8c79bcf3162a6537ef2ad651ac05385eb91edda3"
+  integrity sha512-8JLqRK4rmK8HRCyj+8xCVAdg4peQm0QuIsMLPfrYPX7JbFACKgsnW3BndHAu6TPJRoiFRCNbBDAaeqGLU2XUAQ==
   dependencies:
     "@antfu/ni" "0.21.12"
     "@builder.io/partytown" "^0.6.1"
@@ -1443,7 +1443,7 @@
     "@faststore/diagnostics" "4.1.1"
     "@faststore/lighthouse" "4.1.1"
     "@faststore/sdk" "4.1.1"
-    "@faststore/ui" "4.1.1"
+    "@faststore/ui" "4.2.0"
     "@graphql-codegen/cli" "6.1.1"
     "@graphql-codegen/client-preset" "4.2.6"
     "@graphql-codegen/typescript" "4.0.7"
@@ -1463,7 +1463,7 @@
     "@lhci/cli" "^0.15.1"
     "@types/react" "^18.3.27"
     "@vtex/client-cms" "^0.2.16"
-    "@vtex/client-cp" "0.5.1"
+    "@vtex/client-cp" "0.6.0"
     "@vtex/prettier-config" "1.0.0"
     autoprefixer "^10.4.0"
     cookie "^0.7.0"
@@ -1511,10 +1511,10 @@
     idb-keyval "^6"
     zustand "^5.0.5"
 
-"@faststore/ui@4.1.1":
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-4.1.1.tgz#e385c5f39eebbfaba72ac202ffedf9e992f7e100"
-  integrity sha512-MQs9QFWhkRH63mTIqYl6d30S4e3m2jOZHZPYVDCBW+x1naMIQC5IyCq4CtR/4FlQOKBXInUt4ZhuBBh9kPo2Rw==
+"@faststore/ui@4.2.0":
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/@faststore/ui/-/ui-4.2.0.tgz#6d90bfb9b75901282730da7635cd5241a8a4b71c"
+  integrity sha512-1a85O7WdBHbvhAOVs0uBYvVYIyGv9v6ZL7FpcDBShXjk20Anskl4wEvsSbWvj+4FmRiVt/CM2QmJU7XgmyuKyA==
   dependencies:
     "@faststore/components" "4.1.1"
     include-media "^2.0.0"
@@ -2147,7 +2147,7 @@
     p-limit "3.1.0"
     tslib "^2.4.0"
 
-"@graphql-tools/merge@9.1.1", "@graphql-tools/merge@^9.0.0":
+"@graphql-tools/merge@9.1.1":
   version "9.1.1"
   resolved "https://registry.npmjs.org/@graphql-tools/merge/-/merge-9.1.1.tgz"
   integrity sha512-BJ5/7Y7GOhTuvzzO5tSBFL4NGr7PVqTJY3KeIDlVTT8YLcTXtBR+hlrC3uyEym7Ragn+zyWdHeJ9ev+nRX1X2w==
@@ -2155,7 +2155,7 @@
     "@graphql-tools/utils" "^10.9.1"
     tslib "^2.4.0"
 
-"@graphql-tools/merge@^9.1.1", "@graphql-tools/merge@^9.1.9":
+"@graphql-tools/merge@^9.0.0", "@graphql-tools/merge@^9.1.1", "@graphql-tools/merge@^9.1.9":
   version "9.1.9"
   resolved "https://registry.npmjs.org/@graphql-tools/merge/-/merge-9.1.9.tgz"
   integrity sha512-iHUWNjRHeQRYdgIMIuChThOwoKzA9vrzYeslgfBo5eUYEyHGZCoDPjAavssoYXLwstYt1dZj2J22jSzc2DrN0Q==
@@ -2224,7 +2224,7 @@
     tslib "^2.4.0"
     ws "^8.20.0"
 
-"@graphql-tools/utils@10.10.1", "@graphql-tools/utils@^10.0.0":
+"@graphql-tools/utils@10.10.1":
   version "10.10.1"
   resolved "https://registry.npmjs.org/@graphql-tools/utils/-/utils-10.10.1.tgz"
   integrity sha512-9iOZ7x6tuIpp/dviNmTCSH1cDDNLIcrj6T3WKH9lU4nRWx5Pr0e7Faj7T/HmP2Njrjik63dJWuDVRxfQSTOc4g==
@@ -2234,17 +2234,7 @@
     cross-inspect "1.0.1"
     tslib "^2.4.0"
 
-"@graphql-tools/utils@^10.0.13":
-  version "10.2.3"
-  resolved "https://registry.npmjs.org/@graphql-tools/utils/-/utils-10.2.3.tgz"
-  integrity sha512-j7x0sO0VtWVhD3FubyY42abx+g61/at5W5Y3DSOckPkBo7yVjkcnAsXoB4jiUnznhGme/o+uX5VgA8HrjyR5ZQ==
-  dependencies:
-    "@graphql-typed-document-node/core" "^3.1.1"
-    cross-inspect "1.0.0"
-    dset "^3.1.2"
-    tslib "^2.4.0"
-
-"@graphql-tools/utils@^10.9.1":
+"@graphql-tools/utils@^10.0.0", "@graphql-tools/utils@^10.0.13", "@graphql-tools/utils@^10.9.1":
   version "10.11.0"
   resolved "https://registry.npmjs.org/@graphql-tools/utils/-/utils-10.11.0.tgz"
   integrity sha512-iBFR9GXIs0gCD+yc3hoNswViL1O5josI33dUqiNStFI/MHLCEPduasceAcazRH77YONKNiviHBV8f7OgcT4o2Q==
@@ -2472,15 +2462,7 @@
     "@inquirer/type" "^3.0.10"
     yoctocolors-cjs "^2.1.3"
 
-"@inquirer/confirm@^3.1.18":
-  version "3.1.18"
-  resolved "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.1.18.tgz"
-  integrity sha512-axDSeAtgRfMAOnI2NXJAcBliknRiPHBPBh8VpofFW2vSt5nxU/IoNcWfNBIs1LFwICyLzbvGjF3fd+rYLSU11w==
-  dependencies:
-    "@inquirer/core" "^9.0.6"
-    "@inquirer/type" "^1.5.1"
-
-"@inquirer/confirm@^3.1.22":
+"@inquirer/confirm@^3.1.18", "@inquirer/confirm@^3.1.22":
   version "3.2.0"
   resolved "https://registry.npmjs.org/@inquirer/confirm/-/confirm-3.2.0.tgz"
   integrity sha512-oOIwPs0Dvq5220Z8lGL/6LHRTEr9TgLHmiI99Rj1PJ1p1czTys+olrgBqZk4E2qC0YTzeHprxSQmoHioVdJ7Lw==
@@ -4471,10 +4453,10 @@
     fetch-retry "^4.1.1"
     isomorphic-unfetch "^3.1.0"
 
-"@vtex/client-cp@0.5.1":
-  version "0.5.1"
-  resolved "https://registry.npmjs.org/@vtex/client-cp/-/client-cp-0.5.1.tgz"
-  integrity sha512-z5ooUZvOl7okcfIgXxviI4Y2TNpotbZBHhseL+AhMsyG+UxijcfqyiNDcQncWKbNmPQY6/kZgjuAh/ENaN+2CA==
+"@vtex/client-cp@0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@vtex/client-cp/-/client-cp-0.6.0.tgz#25dd82e1a7f753d5b94fa5f9c7b384a694e41492"
+  integrity sha512-+ijNI8uOIB84oOSZFiEmEcjXe23sK9lwTyvyoB72y1gS7Xfqgwn93F9gzrbYjxerPNZTb8ZSlsGBLWxCx1ONBw==
   dependencies:
     axios "^1.7.7"
 
@@ -5725,13 +5707,6 @@ cross-fetch@^3.1.5:
   dependencies:
     node-fetch "2.6.7"
 
-cross-inspect@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/cross-inspect/-/cross-inspect-1.0.0.tgz"
-  integrity sha512-4PFfn4b5ZN6FMNGSZlyb7wUhuN8wvj8t/VQHZdM4JsDcruGJ8L2kf9zao98QIrBPFCpdk27qst/AGTl7pL3ypQ==
-  dependencies:
-    tslib "^2.4.0"
-
 cross-inspect@1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/cross-inspect/-/cross-inspect-1.0.1.tgz"
@@ -6178,11 +6153,6 @@ draftjs-to-html@^0.9.1:
   version "0.9.1"
   resolved "https://registry.npmjs.org/draftjs-to-html/-/draftjs-to-html-0.9.1.tgz"
   integrity sha512-fFstE6+IayaVFBEvaFt/wN8vdj8FsTRzij7dy7LI9QIwf5LgfHFi9zSpvCg+feJ2tbYVqHxUkjcibwpsTpgFVQ==
-
-dset@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.npmjs.org/dset/-/dset-3.1.2.tgz"
-  integrity sha512-g/M9sqy3oHe477Ar4voQxWtaPIFw1jTdKZuomOjhCcBx9nHUNn0pu6NopuFFrTh/TRZIKEj+76vLWFu9BNKk+Q==
 
 dunder-proto@^1.0.1:
   version "1.0.1"
