@@ -1,0 +1,40 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "CarouselBanner",
+  "$componentTitle": "Carrossel de Banners",
+  "type": "object",
+  "required": [
+    "banners"
+  ],
+  "properties": {
+    "banners": {
+      "title": "Lista de Banners",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "title": "Slide do Banner",
+        "required": ["title", "imageUrl"],
+        "properties": {
+          "title": {
+            "title": "Título / Alt da Imagem",
+            "type": "string"
+          },
+          "imageUrl": {
+            "title": "Imagem do Banner",
+            "type": "string",
+            "widget": {
+              "ui:widget": "media-gallery"
+            }
+          },
+          "linkUrl": {
+            "title": "Link de Destino (Opcional)",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

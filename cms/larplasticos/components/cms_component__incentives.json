@@ -1,0 +1,30 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "Incentives",
+  "$componentTitle": "Barra de Incentivos",
+  "type": "object",
+  "required": ["incentivesList"],
+  "properties": {
+    "incentivesList": {
+      "title": "Itens de Incentivo",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "iconName"],
+        "properties": {
+          "title": {
+            "title": "Texto do Incentivo",
+            "type": "string"
+          },
+          "iconName": {
+            "title": "Nome do Ícone (Lucide Icons)",
+            "type": "string",
+            "description": "Digite o nome com a primeira letra maiúscula (Ex: Truck, CreditCard, ShieldCheck)"
+          }
+        }
+      }
+    }
+  }
+}
