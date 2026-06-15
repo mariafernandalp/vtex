@@ -1,0 +1,38 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "NavbarCategories",
+  "$componentTitle": "Links de Categorias",
+  "type": "object",
+  "required": ["categories"],
+  "properties": {
+    "title": {
+      "title": "Título da Seção (Opcional)",
+      "type": "string"
+    },
+    "categories": {
+      "title": "Categorias / Links",
+      "description": "Adicione os links de categorias que serão exibidos na navegação",
+      "type": "array",
+      "maxItems": 8,
+      "items": {
+        "title": "Link da Categoria",
+        "type": "object",
+        "required": ["text", "url"],
+        "properties": {
+          "text": {
+            "title": "Texto do Link",
+            "description": "Ex: Caixas Plásticas, Organizadores, etc.",
+            "type": "string"
+          },
+          "url": {
+            "title": "URL do Link",
+            "description": "Ex: /caixas-pl%C3%A1sticas, /organizadores",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
