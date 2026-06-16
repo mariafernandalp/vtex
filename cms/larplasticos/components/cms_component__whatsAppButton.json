@@ -1,0 +1,9 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "WhatsAppButton",
+  "$componentTitle": "Botão WhatsApp Flutuante",
+  "type": "object",
+  "properties": {}
+}

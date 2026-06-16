@@ -558,26 +558,36 @@
     }
   }
 
-  .whatsapp-button {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    color: #fff;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
+// circulo.scss
 
-    &:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
+.whatsapp-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  color: #fff; // Define a cor do conteúdo (SVG) como branco
+  background-color: #09c72c ;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+
+  // --- ADICIONE ESTAS LINHAS AQUI ---
+  svg {
+    // Define um tamanho menor e fixo para o SVG via SCSS
+    width: 2em; 
+    height: 2rem;
   }
+  // ------------------------------------
+
+  &:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+}
 }
