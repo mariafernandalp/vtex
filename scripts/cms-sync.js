@@ -46,7 +46,8 @@ function readJsonFiles(dir, regex) {
 }
 
 async function main() {
-  const token = execSync('vtex local token', { encoding: 'utf8' }).trim()
+  const rawToken = process.env.VTEX_TOKEN ? '' : execSync('vtex local token', { encoding: 'utf8' })
+  const token = process.env.VTEX_TOKEN || rawToken.match(/eyJ[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+\.[a-zA-Z0-9_-]+/)?.[0] || rawToken.replace(/[^\x20-\x7E]/g, '').trim()
   const account = 'larplasticos'
   const storeId = 'larplasticosfs'
 

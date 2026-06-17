@@ -13,7 +13,7 @@ import {
 import * as LucideIcons from 'lucide-react'
 import { Section } from '@faststore/core'
 import styles from './Footer.module.scss'
-import useScreenResize from '@faststore/core/src/sdk/ui/useScreenResize' // Wait, I shouldn't import from /src/. 
+
 
 // Let's implement a quick useScreenResize hook instead to be safe from import errors.
 function useWindowSize() {

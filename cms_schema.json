@@ -1687,9 +1687,9 @@
         "#/$defs/base-component"
       ],
       "$componentKey": "Footer",
-      "$componentTitle": "Footer",
-      "title": "Footer",
-      "description": "Footer displayed on all pages",
+      "$componentTitle": "Footer Customizado",
+      "title": "Footer Customizado",
+      "description": "Footer com ícones customizados",
       "type": "object",
       "properties": {
         "incentives": {
@@ -1776,6 +1776,11 @@
                       "title": "Link URL",
                       "type": "string",
                       "description": "Absolute or Relative"
+                    },
+                    "iconName": {
+                      "title": "Nome do Ícone (Lucide Icons)",
+                      "type": "string",
+                      "description": "Digite o nome com a primeira letra maiúscula (Ex: Truck, CreditCard, ShieldCheck)"
                     }
                   }
                 }
@@ -1959,11 +1964,7 @@
             }
           }
         }
-      },
-      "readOnly": false,
-      "writeOnly": false,
-      "deprecated": false,
-      "$abstract": false
+      }
     },
     "Hero": {
       "$extends": [
