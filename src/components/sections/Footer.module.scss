@@ -13,4 +13,177 @@
     @include meta.load-css("~@faststore/ui/src/components/organisms/Incentives/styles.scss");
     @include meta.load-css("~@faststore/ui/src/components/organisms/Footer/styles.scss");
   }
+
+  .footerMainRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 3rem;
+    margin-top: 0.5rem;
+    padding-bottom: 4rem;
+    border-top: 1px solid var(--fs-border-color-light, #e0e0e0);
+    flex-wrap: wrap;
+    gap: 3rem;
+    width: 100%;
+  }
+
+  .footerLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    max-width: 400px;
+  }
+
+  .footerLogo {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .footerCopy {
+    font-size: var(--fs-text-size-body);
+    color: var(--fs-color-text-light);
+    line-height: 1.6;
+  }
+
+  .footerRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .footerNav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 5rem;
+    width: 100%;
+  }
+
+  .customFooterLinks {
+    /* Auto width allows side-by-side */
+  }
+
+  .footerLinksColumns {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5rem;
+    text-align: left;
+  }
+
+  .linkColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      align-items: flex-start;
+
+      li {
+        a {
+          color: var(--fs-color-text);
+          font-weight: var(--fs-text-weight-regular);
+          transition: color 0.2s ease, transform 0.2s ease;
+          display: inline-block;
+
+          &:hover {
+            color: var(--fs-color-primary, #000);
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+  }
+
+  .footerLinksTitle {
+    font-weight: var(--fs-text-weight-bold);
+    font-size: var(--fs-text-size-4);
+    color: var(--fs-color-text-display);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+
+  .footerContacts {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+    align-items: flex-start;
+
+    .contactsGrid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contactBlock {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      align-items: flex-start;
+    }
+
+    .contactBlockHeader {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.15rem;
+      color: var(--fs-color-text-display);
+
+      svg {
+        opacity: 0.8;
+      }
+    }
+
+    .contactBlockTitle {
+      font-weight: var(--fs-text-weight-bold);
+      font-size: var(--fs-text-size-body);
+      color: inherit;
+    }
+
+    .contactList {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      align-items: flex-start;
+
+      li {
+        color: var(--fs-color-text-light);
+        font-size: var(--fs-text-size-body);
+        max-width: 240px;
+        line-height: 1.4;
+        word-wrap: break-word;
+        
+        a {
+          color: var(--fs-color-text);
+          transition: color 0.2s ease, transform 0.2s ease;
+          display: inline-block;
+
+          &:hover {
+            color: var(--fs-color-primary, #000);
+            transform: translateX(2px);
+          }
+        }
+      }
+    }
+  }
 }

@@ -46,6 +46,55 @@
         }
       }
     },
+    "footerContacts": {
+      "title": "Footer Contacts",
+      "type": "object",
+      "properties": {
+        "title": {
+          "title": "Main Title",
+          "type": "string",
+          "default": "Atendimento"
+        },
+        "contactBlocks": {
+          "title": "Contact Blocks",
+          "type": "array",
+          "items": {
+            "title": "Block",
+            "type": "object",
+            "properties": {
+              "title": {
+                "title": "Block Title",
+                "type": "string"
+              },
+              "icon": {
+                "title": "Ícone do Título",
+                "type": "string",
+                "description": "Nome do Ícone (Lucide Icons). Ex: Phone, Mail, Clock, MapPin"
+              },
+              "items": {
+                "title": "Items",
+                "type": "array",
+                "items": {
+                  "title": "Item",
+                  "type": "object",
+                  "required": ["text"],
+                  "properties": {
+                    "text": {
+                      "title": "Text",
+                      "type": "string"
+                    },
+                    "link": {
+                      "title": "Link URL (opcional)",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "footerLinks": {
       "title": "Footer Links Sections",
       "type": "array",

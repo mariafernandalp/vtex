@@ -79,7 +79,7 @@ function CustomFooterLinks({ links }: { links: FooterLinkSection[] }) {
   }
 
   return (
-    <section data-fs-footer data-fs-footer-links>
+    <section className={styles.customFooterLinks}>
       {!isDesktop ? (
         <UIAccordion indices={indicesExpanded} onChange={onChange}>
           {links.map(({ sectionTitle, items }) => (
@@ -92,10 +92,10 @@ function CustomFooterLinks({ links }: { links: FooterLinkSection[] }) {
           ))}
         </UIAccordion>
       ) : (
-        <nav data-fs-footer-links-columns aria-label="Footer Links Navigation">
+        <nav className={styles.footerLinksColumns} aria-label="Footer Links Navigation">
           {links.map(({ sectionTitle, items }) => (
-            <div key={sectionTitle}>
-              <p data-fs-footer-links-title>{sectionTitle}</p>
+            <div key={sectionTitle} className={styles.linkColumn}>
+              <p className={styles.footerLinksTitle}>{sectionTitle}</p>
               <Links items={items} />
             </div>
           ))}
@@ -105,9 +105,45 @@ function CustomFooterLinks({ links }: { links: FooterLinkSection[] }) {
   )
 }
 
+function CustomFooterContacts({ contacts }: { contacts: any }) {
+  if (!contacts || !contacts.contactBlocks) return null
+
+  return (
+    <div className={styles.footerContacts}>
+      <p className={styles.footerLinksTitle}>{contacts.title}</p>
+      <div className={styles.contactsGrid}>
+        {contacts.contactBlocks.map((block: any, i: number) => (
+          <div key={i} className={styles.contactBlock}>
+            {block.title && (
+              <div className={styles.contactBlockHeader}>
+                {block.icon && <DynamicIcon iconName={block.icon} size={20} />}
+                <p className={styles.contactBlockTitle}>{block.title}</p>
+              </div>
+            )}
+            <ul className={styles.contactList}>
+              {block.items?.map((item: any, j: number) => (
+                <li key={j}>
+                  {item.link ? (
+                    <Link href={item.link} variant="display" size="small">
+                      {item.text}
+                    </Link>
+                  ) : (
+                    <span>{item.text}</span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 const FooterOverride = (props: any) => {
   const {
     incentives,
+    footerContacts,
     footerLinks,
     footerSocial,
     logo,
@@ -139,42 +175,51 @@ const FooterOverride = (props: any) => {
             </section>
           )}
 
-          <section data-fs-footer-navigation>
-            {footerLinks && <CustomFooterLinks links={footerLinks} />}
-            {footerSocial && (
-              <section data-fs-footer-social>
-                <p>{footerSocial.title}</p>
-                <UIList>
-                  {footerSocial.socialLinks?.map((social: any, i: number) => (
-                    <li key={i}>
-                      <Link href={social.url} title={social.alt} target="_blank" rel="noopener noreferrer">
-                        <DynamicIcon iconName={social.icon?.icon || social.icon} size={24} />
-                      </Link>
-                    </li>
-                  ))}
-                </UIList>
-              </section>
-            )}
-          </section>
+          <div className={styles.footerMainRow}>
+            <section className={styles.footerLeft} aria-label="Footer Information">
+              {logo && (
+                <Link href={logo.link?.url} title={logo.link?.title}>
+                  <img src={logo.src} alt={logo.alt} width={200} style={{ objectFit: 'contain' }} className={styles.footerLogo} />
+                </Link>
+              )}
 
-          <section data-fs-footer-info aria-label="Footer Information">
-            {logo && (
-              <Link href={logo.link?.url} title={logo.link?.title}>
-                <img src={logo.src} alt={logo.alt} width={120} style={{ objectFit: 'contain' }} />
-              </Link>
-            )}
+              <div data-fs-footer-copyright className={`text__legend ${styles.footerCopy}`}>
+                <p>{copyrightInfo}</p>
+              </div>
 
-            {acceptedPaymentMethods?.showPaymentMethods && (
-              <UIPaymentMethods
-                flagList={acceptedPaymentMethods.paymentMethods}
-                title={<p>{acceptedPaymentMethods.title}</p>}
-              />
-            )}
-            
-            <div data-fs-footer-copyright className="text__legend">
-              <p>{copyrightInfo}</p>
-            </div>
-          </section>
+              {acceptedPaymentMethods?.showPaymentMethods && (
+                <UIPaymentMethods
+                  flagList={acceptedPaymentMethods.paymentMethods}
+                  title={<p>{acceptedPaymentMethods.title}</p>}
+                />
+              )}
+            </section>
+
+            <section className={styles.footerRight}>
+              <div className={styles.footerNav}>
+                {footerLinks && <CustomFooterLinks links={footerLinks} />}
+                {footerSocial && (
+                  <div className={styles.linkColumn}>
+                    <p className={styles.footerLinksTitle}>{footerSocial.title}</p>
+                    <ul className={styles.contactList}>
+                      {footerSocial.socialLinks?.map((social: any, i: number) => {
+                        const iconStr = typeof social.icon === 'string' ? social.icon : social.icon?.icon;
+                        return (
+                          <li key={i}>
+                            <Link href={social.url} title={social.alt} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <DynamicIcon iconName={iconStr} size={20} />
+                              <span>{social.alt || iconStr}</span>
+                            </Link>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                )}
+                {footerContacts && <CustomFooterContacts contacts={footerContacts} />}
+              </div>
+            </section>
+          </div>
 
         </div>
       </footer>
