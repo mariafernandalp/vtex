@@ -3,6 +3,8 @@
 @layer components {
   .section {
     margin-bottom: 0;
+    overflow-x: hidden;
+    background-color: #000;
 
     @include meta.load-css("~@faststore/ui/src/components/atoms/Button/styles.scss");
     @include meta.load-css("~@faststore/ui/src/components/atoms/Link/styles.scss");
@@ -14,6 +16,115 @@
     @include meta.load-css("~@faststore/ui/src/components/organisms/Footer/styles.scss");
   }
 
+  .incentivesWrapper {
+    /* Full edge-to-edge width */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+    
+    /* Apple Dark Glassmorphism */
+    background: rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s ease;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+
+    /* Ensure inner list stays aligned with site container */
+    :global([data-fs-content="incentives"]) {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      @media (max-width: 1024px) {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 2.5rem !important;
+
+        * {
+          border: none !important;
+          box-shadow: none !important;
+        }
+        *::before, *::after {
+          display: none !important;
+          background: transparent !important;
+        }
+      }
+    }
+
+    .incentiveItem {
+      @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+        border: none !important;
+        &::before, &::after {
+          display: none !important;
+        }
+      }
+    }
+
+    .incentiveContent {
+      @media (max-width: 1024px) {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(48, 144, 66, 0.05),
+        rgba(48, 144, 66, 0.15),
+        rgba(48, 144, 66, 0.05),
+        transparent
+      );
+      transform: skewX(-20deg);
+      transition: all 0.8s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+      
+      &::before {
+        left: 100%;
+        transition: left 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    }
+    
+    * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .incentiveIcon {
+    color: #309042 !important;
+  }
+
   .footerMainRow {
     display: flex;
     justify-content: space-between;
@@ -21,7 +132,6 @@
     padding-top: 3rem;
     margin-top: 0.5rem;
     padding-bottom: 4rem;
-    border-top: 1px solid var(--fs-border-color-light, #e0e0e0);
     flex-wrap: wrap;
     gap: 3rem;
     width: 100%;
@@ -184,6 +294,194 @@
           }
         }
       }
+    }
+  }
+
+  .socialListDesktop {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+    li a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--fs-color-text-light);
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--fs-color-primary, #000);
+      }
+    }
+  }
+
+  /* Mobile Responsiveness - Inspired by user example */
+  @media (max-width: 1024px) {
+    .footerMainRow {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem; /* match gap-12 */
+      padding-top: 1.5rem;
+    }
+    .footerLeft {
+      align-items: flex-start;
+      text-align: left;
+      max-width: 100%;
+      margin-bottom: 1rem;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .logoLink {
+      align-self: center !important;
+      margin: 0 auto !important;
+      display: block !important;
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    .footerLogo {
+      width: 180px !important;
+      max-width: 100%;
+      margin: 0 auto !important;
+      display: inline-block !important;
+    }
+
+    .footerRight {
+      align-items: stretch;
+      min-width: 100%;
+    }
+
+    .footerNav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem; /* match gap-12 between main columns */
+      width: 100%;
+    }
+
+    .footerLinksColumns {
+      flex-direction: column;
+      gap: 3rem; /* space between Navigation and next column */
+      width: 100%;
+    }
+
+    .linkColumn {
+      align-items: flex-start;
+      text-align: left;
+      width: 100%;
+      
+      ul {
+        align-items: flex-start;
+        gap: 1rem; /* space-y-4 */
+      }
+    }
+
+    .footerLinksTitle {
+      margin-bottom: 1.5rem !important; /* mb-6 */
+      color: #fff !important; /* text-white */
+    }
+
+    .socialListDesktop {
+      gap: 1rem;
+      
+      li a {
+        background-color: transparent !important; /* Circle background removed */
+        color: #94a3b8; /* text-slate-400 */
+        width: auto !important;
+        height: auto !important;
+        
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .footerContacts {
+      align-items: flex-start;
+      text-align: left;
+      margin-top: 0;
+
+      .contactsGrid {
+        gap: 2rem;
+        align-items: flex-start;
+      }
+      
+      .contactBlock {
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      
+      .contactBlockHeader {
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+      }
+
+      .contactList {
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      
+      .contactList li {
+        text-align: left;
+        line-height: 1.5;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+
+        svg {
+          margin-top: 0.15rem; /* align icon with first line of text */
+          color: #309042; /* text-brand-500 */
+        }
+      }
+    }
+
+    .incentivesWrapper {
+      padding: 1.5rem 0;
+
+      :global([data-fs-content="incentives"]), ul {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1.5rem !important;
+        padding: 0 1.5rem !important;
+        width: 100% !important;
+
+        li, :global([data-fs-incentive]) {
+          width: 100% !important;
+          border: none !important;
+          box-shadow: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        *::before, *::after {
+          display: none !important;
+          background: transparent !important;
+        }
+      }
+    }
+
+    .incentiveItem {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      text-align: left !important;
+      gap: 1rem !important;
+      width: 100% !important;
+      border: none !important;
+    }
+
+    .incentiveContent {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      gap: 0.25rem !important;
     }
   }
 }

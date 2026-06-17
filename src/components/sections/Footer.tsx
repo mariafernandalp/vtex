@@ -52,7 +52,7 @@ type FooterLinkSection = {
 
 function Links({ items }: { items: Item[] }) {
   return (
-    <UIList>
+    <UIList className={styles.contactList}>
       {items.map((item) => (
         <li key={item.text} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           {item.iconName && <DynamicIcon iconName={item.iconName} size={18} />}
@@ -66,42 +66,15 @@ function Links({ items }: { items: Item[] }) {
 }
 
 function CustomFooterLinks({ links }: { links: FooterLinkSection[] }) {
-  const { isDesktop } = useWindowSize()
-  const [indicesExpanded, setIndicesExpanded] = useState<Set<number>>(new Set([]))
-
-  const onChange = (index: number) => {
-    if (indicesExpanded.has(index)) {
-      indicesExpanded.delete(index)
-      setIndicesExpanded(new Set(indicesExpanded))
-    } else {
-      setIndicesExpanded(new Set(indicesExpanded.add(index)))
-    }
-  }
-
   return (
-    <section className={styles.customFooterLinks}>
-      {!isDesktop ? (
-        <UIAccordion indices={indicesExpanded} onChange={onChange}>
-          {links.map(({ sectionTitle, items }) => (
-            <UIAccordionItem key={sectionTitle}>
-              <UIAccordionButton>{sectionTitle}</UIAccordionButton>
-              <UIAccordionPanel>
-                <Links items={items} />
-              </UIAccordionPanel>
-            </UIAccordionItem>
-          ))}
-        </UIAccordion>
-      ) : (
-        <nav className={styles.footerLinksColumns} aria-label="Footer Links Navigation">
-          {links.map(({ sectionTitle, items }) => (
-            <div key={sectionTitle} className={styles.linkColumn}>
-              <p className={styles.footerLinksTitle}>{sectionTitle}</p>
-              <Links items={items} />
-            </div>
-          ))}
-        </nav>
-      )}
-    </section>
+    <nav className={styles.footerLinksColumns} aria-label="Footer Links Navigation">
+      {links.map(({ sectionTitle, items }) => (
+        <div key={sectionTitle} className={styles.linkColumn}>
+          <p className={styles.footerLinksTitle}>{sectionTitle}</p>
+          <Links items={items} />
+        </div>
+      ))}
+    </nav>
   )
 }
 
@@ -157,13 +130,13 @@ const FooterOverride = (props: any) => {
         <div data-fs-content="footer">
           
           {incentives && incentives.length > 0 && (
-            <section data-fs-incentives data-fs-incentives-colored={false} data-fs-incentives-variant="horizontal" aria-label="Incentives List">
-               <UIList data-fs-content="incentives">
+            <section className={styles.incentivesWrapper} data-fs-incentives data-fs-incentives-colored={false} data-fs-incentives-variant="horizontal" aria-label="Incentives List">
+               <UIList data-fs-content="incentives" className={styles.incentivesList}>
                   {incentives.map((inc: any, i: number) => (
                     <li role="listitem" key={i}>
-                      <UIIncentive tabIndex={0}>
-                        <DynamicIcon iconName={inc.icon} size={32} data-fs-incentive-icon />
-                        <section data-fs-incentive-content>
+                      <UIIncentive tabIndex={0} className={styles.incentiveItem}>
+                        <DynamicIcon iconName={inc.icon} size={32} className={styles.incentiveIcon} data-fs-incentive-icon />
+                        <section data-fs-incentive-content className={styles.incentiveContent}>
                           <p data-fs-incentive-title>{inc.title}</p>
                           <span data-fs-incentive-description>{inc.firstLineText}</span>
                           {inc.secondLineText && <span data-fs-incentive-description>{inc.secondLineText}</span>}
@@ -178,8 +151,8 @@ const FooterOverride = (props: any) => {
           <div className={styles.footerMainRow}>
             <section className={styles.footerLeft} aria-label="Footer Information">
               {logo && (
-                <Link href={logo.link?.url} title={logo.link?.title}>
-                  <img src={logo.src} alt={logo.alt} width={200} style={{ objectFit: 'contain' }} className={styles.footerLogo} />
+                <Link href={logo.link?.url} title={logo.link?.title} className={styles.logoLink}>
+                  <img src={logo.src} alt={logo.alt} width={280} style={{ objectFit: 'contain' }} className={styles.footerLogo} />
                 </Link>
               )}
 
@@ -201,14 +174,14 @@ const FooterOverride = (props: any) => {
                 {footerSocial && (
                   <div className={styles.linkColumn}>
                     <p className={styles.footerLinksTitle}>{footerSocial.title}</p>
-                    <ul className={styles.contactList}>
+                    <ul className={styles.socialListDesktop}>
                       {footerSocial.socialLinks?.map((social: any, i: number) => {
                         const iconStr = typeof social.icon === 'string' ? social.icon : social.icon?.icon;
                         return (
                           <li key={i}>
-                            <Link href={social.url} title={social.alt} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <Link href={social.url} title={social.alt} target="_blank" rel="noopener noreferrer">
                               <DynamicIcon iconName={iconStr} size={20} />
-                              <span>{social.alt || iconStr}</span>
+                              <span className="sr-only">{social.alt || iconStr}</span>
                             </Link>
                           </li>
                         )
