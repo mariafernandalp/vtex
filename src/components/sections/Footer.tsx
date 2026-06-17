@@ -126,7 +126,7 @@ const FooterOverride = (props: any) => {
                   {incentives.map((inc: any, i: number) => (
                     <li role="listitem" key={i}>
                       <UIIncentive tabIndex={0}>
-                        <Icon name={inc.icon} width={32} height={32} data-fs-incentive-icon />
+                        <DynamicIcon iconName={inc.icon} size={32} data-fs-incentive-icon />
                         <section data-fs-incentive-content>
                           <p data-fs-incentive-title>{inc.title}</p>
                           <span data-fs-incentive-description>{inc.firstLineText}</span>
@@ -148,7 +148,7 @@ const FooterOverride = (props: any) => {
                   {footerSocial.socialLinks?.map((social: any, i: number) => (
                     <li key={i}>
                       <Link href={social.url} title={social.alt} target="_blank" rel="noopener noreferrer">
-                        <Icon name={social.icon?.icon || social.icon} width={24} height={24} />
+                        <DynamicIcon iconName={social.icon?.icon || social.icon} size={24} />
                       </Link>
                     </li>
                   ))}

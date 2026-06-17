@@ -37,20 +37,7 @@
           "icon": {
             "type": "string",
             "title": "Icon",
-            "enumNames": [
-              "Truck",
-              "Calendar",
-              "Gift",
-              "Store Front",
-              "Shield Check"
-            ],
-            "enum": [
-              "Truck",
-              "Calendar",
-              "Gift",
-              "Storefront",
-              "ShieldCheck"
-            ]
+            "description": "Nome do Ícone (Lucide Icons). Ex: Truck, ShieldCheck"
           },
           "alt": {
             "title": "Alternative Label",
@@ -137,14 +124,14 @@
                     "enumNames": [
                       "Facebook",
                       "Instagram",
-                      "Pinterest",
-                      "Twitter"
+                      "YouTube",
+                      "LinkedIn"
                     ],
                     "enum": [
                       "Facebook",
                       "Instagram",
-                      "Pinterest",
-                      "Twitter"
+                      "Youtube",
+                      "Linkedin"
                     ]
                   }
                 }

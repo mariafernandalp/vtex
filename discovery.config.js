@@ -3,7 +3,7 @@ module.exports = {
   seo: {
   "title": "Lar Plásticos",
   "description": "",
-  "titleTemplate": "%s | Lar Plásticos",
+  "titleTemplate": "%s | Loja",
   "author": "Lar Plásticos",
 },
 
