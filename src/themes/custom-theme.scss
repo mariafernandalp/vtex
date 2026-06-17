@@ -590,4 +590,46 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   }
 }
+
+  // ==========================================================
+  // Footer Customizations
+  // ==========================================================
+  .section-footer {
+    background-color: #111111;
+    color: #e5e5e5;
+
+    [data-fs-footer] {
+      background-color: transparent;
+    }
+
+    [data-fs-footer-links-title],
+    [data-fs-footer-social] p,
+    [data-fs-payment-methods] p,
+    [data-fs-incentive-title] {
+      color: #ffffff;
+    }
+
+    [data-fs-link],
+    [data-fs-footer-copyright] p,
+    [data-fs-incentive-description] {
+      color: #cccccc;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+
+    [data-fs-accordion-button] {
+      color: #ffffff;
+    }
+
+    [data-fs-accordion-item] {
+      border-color: #333333;
+    }
+
+    svg {
+      color: #e5e5e5;
+    }
+  }
 }
