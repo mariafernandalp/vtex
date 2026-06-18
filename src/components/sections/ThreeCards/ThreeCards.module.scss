@@ -8,10 +8,55 @@
 .threeCardsContainer {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 1320px;
-  align-items: center;
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.sectionTitle {
+  font-family: var(--fs-text-face-body);
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: pre-line;
+  max-width: 480px;
+  line-height: 1.1;
+}
+
+.sectionSubtitle {
+  font-family: var(--fs-text-face-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0;
+  text-align: left;
+  white-space: pre-line;
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+.cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
 
   @media (min-width: 768px) {
     flex-direction: row;

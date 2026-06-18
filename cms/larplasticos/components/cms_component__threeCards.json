@@ -9,6 +9,14 @@
     "cards"
   ],
   "properties": {
+    "sectionTitle": {
+      "title": "Título da Seção (Opcional)",
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "title": "Subtítulo da Seção (Opcional)",
+      "type": "string"
+    },
     "cards": {
       "title": "Cards",
       "type": "array",

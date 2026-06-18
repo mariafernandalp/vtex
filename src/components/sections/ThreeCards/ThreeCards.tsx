@@ -22,16 +22,25 @@ interface CardItem {
 }
 
 interface ThreeCardsProps {
+  sectionTitle?: string
+  sectionSubtitle?: string
   cards: CardItem[]
 }
 
-function ThreeCards({ cards }: ThreeCardsProps) {
+function ThreeCards({ sectionTitle, sectionSubtitle, cards }: ThreeCardsProps) {
   if (!cards || cards.length === 0) return null
 
   return (
     <section className={styles.threeCardsSection}>
       <div className={styles.threeCardsContainer}>
-        {cards.map((card, index) => {
+        {(sectionTitle || sectionSubtitle) && (
+          <div className={styles.sectionHeader}>
+            {sectionTitle && <h2 className={styles.sectionTitle}>{sectionTitle}</h2>}
+            {sectionSubtitle && <p className={styles.sectionSubtitle}>{sectionSubtitle}</p>}
+          </div>
+        )}
+        <div className={styles.cardsGrid}>
+          {cards.map((card, index) => {
           const Icon = card.buttonIcon ? resolveLucideIcon(card.buttonIcon) : null
 
           const content = (
@@ -67,6 +76,7 @@ function ThreeCards({ cards }: ThreeCardsProps) {
           }
           return <div key={index} className={styles.link}>{content}</div>
         })}
+        </div>
       </div>
     </section>
   )

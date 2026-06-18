@@ -1,0 +1,43 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "HeroBanner",
+  "$componentTitle": "Banner Principal",
+  "type": "object",
+  "required": [
+    "image",
+    "title",
+    "description",
+    "buttonText"
+  ],
+  "properties": {
+    "image": {
+      "title": "Imagem de Fundo (Desktop e Mobile)",
+      "type": "string",
+      "widget": {
+        "ui:widget": "media-gallery"
+      }
+    },
+    "title": {
+      "title": "Título (Destaque)",
+      "type": "string"
+    },
+    "description": {
+      "title": "Descrição (Breve frase)",
+      "type": "string"
+    },
+    "buttonText": {
+      "title": "Texto do Botão (Chamada para ação)",
+      "type": "string"
+    },
+    "buttonIcon": {
+      "title": "Ícone do Botão (Lucide React, ex: ArrowRight)",
+      "type": "string"
+    },
+    "linkUrl": {
+      "title": "Link de Destino",
+      "type": "string"
+    }
+  }
+}

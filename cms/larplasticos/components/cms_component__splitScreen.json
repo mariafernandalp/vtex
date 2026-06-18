@@ -1,0 +1,74 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "SplitScreen",
+  "$componentTitle": "Split Screen (Meio a Meio)",
+  "type": "object",
+  "required": [
+    "leftCard",
+    "rightCard"
+  ],
+  "properties": {
+    "leftCard": {
+      "title": "Card Esquerdo",
+      "type": "object",
+      "required": ["image", "title", "description", "buttonText"],
+      "properties": {
+        "image": {
+          "title": "Imagem de Fundo",
+          "type": "string",
+          "widget": {
+            "ui:widget": "media-gallery"
+          }
+        },
+        "title": {
+          "title": "Título (Destaque)",
+          "type": "string"
+        },
+        "description": {
+          "title": "Descrição (Breve frase)",
+          "type": "string"
+        },
+        "buttonText": {
+          "title": "Texto do Link (Chamada para ação)",
+          "type": "string"
+        },
+        "linkUrl": {
+          "title": "Link de Destino",
+          "type": "string"
+        }
+      }
+    },
+    "rightCard": {
+      "title": "Card Direito",
+      "type": "object",
+      "required": ["image", "title", "description", "buttonText"],
+      "properties": {
+        "image": {
+          "title": "Imagem de Fundo",
+          "type": "string",
+          "widget": {
+            "ui:widget": "media-gallery"
+          }
+        },
+        "title": {
+          "title": "Título (Destaque)",
+          "type": "string"
+        },
+        "description": {
+          "title": "Descrição (Breve frase)",
+          "type": "string"
+        },
+        "buttonText": {
+          "title": "Texto do Link (Chamada para ação)",
+          "type": "string"
+        },
+        "linkUrl": {
+          "title": "Link de Destino",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

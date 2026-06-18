@@ -5,6 +5,8 @@ import WhatsAppButton from "./WhatsAppButton/WhatsAppButton";
 import Footer from "./sections/Footer";
 import ThreeCards from "./sections/ThreeCards/ThreeCards";
 import HighlightCards from "./sections/HighlightCards/HighlightCards";
+import SplitScreen from "./sections/SplitScreen/SplitScreen";
+import HeroBanner from "./sections/HeroBanner/HeroBanner";
 
 export default {
     CarouselBanner,
@@ -14,4 +16,6 @@ export default {
     Footer,
     ThreeCards,
     HighlightCards,
+    SplitScreen,
+    HeroBanner,
 };
