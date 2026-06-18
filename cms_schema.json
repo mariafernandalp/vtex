@@ -4815,6 +4815,63 @@
         }
       }
     },
+    "FourCards": {
+      "$extends": [
+        "#/$defs/base-component"
+      ],
+      "$componentKey": "FourCards",
+      "$componentTitle": "Quatro Cards (Grade 2x2)",
+      "type": "object",
+      "required": [
+        "cards"
+      ],
+      "properties": {
+        "sectionTitle": {
+          "title": "Título da Seção (Opcional)",
+          "type": "string"
+        },
+        "sectionSubtitle": {
+          "title": "Subtítulo da Seção (Opcional)",
+          "type": "string"
+        },
+        "cards": {
+          "title": "Cards (Necessário 4)",
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "title": "Card",
+            "required": [
+              "image",
+              "title",
+              "buttonIcon"
+            ],
+            "properties": {
+              "image": {
+                "title": "Imagem de Fundo",
+                "type": "string",
+                "widget": {
+                  "ui:widget": "media-gallery"
+                }
+              },
+              "title": {
+                "title": "Título da Categoria (Destaque)",
+                "type": "string"
+              },
+              "buttonIcon": {
+                "title": "Ícone do Botão (Lucide React, ex: ArrowRight, Plus)",
+                "type": "string"
+              },
+              "linkUrl": {
+                "title": "Link de Destino",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
     "HeroBanner": {
       "$extends": [
         "#/$defs/base-component"
@@ -5196,6 +5253,9 @@
           },
           {
             "$ref": "#/components/CarouselBanner"
+          },
+          {
+            "$ref": "#/components/FourCards"
           },
           {
             "$ref": "#/components/HeroBanner"
