@@ -9,6 +9,7 @@ import '@faststore/ui/src/components/molecules/Carousel/styles.scss'
 interface BannerItem {
   title: string
   imageUrl: string
+  imageUrlMobile?: string
   linkUrl?: string
 }
 
@@ -41,7 +42,6 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
       className="section-carousel-banner"
       aria-label="Main Banner Carousel"
       style={{
-        paddingBlock: 'clamp(1rem, 3vw, 2rem)',
         width: '100%',
         display: 'block'
       }}
@@ -49,9 +49,6 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
       <div
         ref={carouselRef}
         style={{
-          margin: '0 auto',
-          maxWidth: '1440px',
-          padding: '0 1rem',
           width: '100%',
           boxSizing: 'border-box'
         }}
@@ -60,27 +57,29 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
           style={{
             width: '100%',
             overflow: 'hidden',
-            borderRadius: '24px',
             boxSizing: 'border-box'
           }}
         >
           <Carousel id="hero-carousel" itemsPerPage={1} variant="slide" infiniteMode controls="complete">
             {banners.map((banner, index) => {
+              const mobileImg = banner.imageUrlMobile || banner.imageUrl
               const slide = (
-                <div
-                  style={{
-                    position: 'relative',
-                    width: '100%',
-                    aspectRatio: '1440 / 440',
-                    background: 'transparent',
-                    overflow: 'hidden'
-                  }}
-                >
+                <div className="carousel-slide-container">
                   <Image
+                    className="carousel-image-desktop"
                     src={banner.imageUrl}
                     alt={banner.title}
                     fill
                     sizes="(max-width: 1440px) 100vw, 1440px"
+                    priority={index === 0}
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <Image
+                    className="carousel-image-mobile"
+                    src={mobileImg}
+                    alt={banner.title}
+                    fill
+                    sizes="100vw"
                     priority={index === 0}
                     style={{ objectFit: 'cover' }}
                   />
@@ -97,7 +96,7 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
                   {slide}
                 </Link>
               ) : (
-                <div key={index}>{slide}</div>
+                <div key={index} style={{ width: '100%' }}>{slide}</div>
               )
             })}
           </Carousel>

@@ -4793,7 +4793,14 @@
                 "type": "string"
               },
               "imageUrl": {
-                "title": "Imagem do Banner",
+                "title": "Imagem do Banner (Desktop)",
+                "type": "string",
+                "widget": {
+                  "ui:widget": "media-gallery"
+                }
+              },
+              "imageUrlMobile": {
+                "title": "Imagem do Banner (Mobile)",
                 "type": "string",
                 "widget": {
                   "ui:widget": "media-gallery"

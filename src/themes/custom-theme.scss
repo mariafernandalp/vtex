@@ -507,6 +507,35 @@
   }
 
   .section-carousel-banner {
+    .carousel-image-desktop {
+      display: none;
+    }
+    .carousel-image-mobile {
+      display: block;
+    }
+
+    .carousel-slide-container {
+      position: relative;
+      width: 100%;
+      background: transparent;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      line-height: 0;
+      display: block;
+    }
+
+    @include u.media(">=notebook") {
+      .carousel-image-desktop {
+        display: block;
+      }
+      .carousel-image-mobile {
+        display: none;
+      }
+      .carousel-slide-container {
+        aspect-ratio: 1440 / 440;
+      }
+    }
+
     [data-fs-carousel] {
       --fs-carousel-controls-width: 2.75rem;
       --fs-carousel-controls-height: 2.75rem;
@@ -515,7 +544,10 @@
       --fs-carousel-controls-icon-color: var(--fs-color-main-3);
       --fs-carousel-controls-control-left: var(--fs-spacing-3);
       --fs-carousel-controls-control-right: var(--fs-spacing-3);
-      --fs-carousel-bullets-padding-top: var(--fs-spacing-2);
+      --fs-carousel-bullets-padding-top: 0;
+      --fs-carousel-item-margin-right: 0;
+      --fs-carousel-padding-mobile: 0;
+      --fs-carousel-padding-desktop: 0;
       position: relative;
     }
 
@@ -525,7 +557,7 @@
 
     [data-fs-carousel-track-container] {
       overflow: hidden;
-      border-radius: 28px;
+      border-radius: 0;
     }
 
     [data-fs-carousel-controls] {
@@ -535,6 +567,11 @@
       opacity: 1 !important;
       pointer-events: auto;
       z-index: 2;
+      display: none !important;
+
+      @include u.media(">=notebook") {
+        display: flex !important;
+      }
     }
 
     [data-fs-carousel-control="left"] {
@@ -555,6 +592,21 @@
 
     [data-fs-carousel-bullets] {
       justify-content: center;
+      position: absolute;
+      bottom: var(--fs-spacing-4);
+      left: 0;
+      right: 0;
+      z-index: 2;
+
+      [data-fs-carousel-bullet] {
+        width: auto;
+        
+        [data-fs-button-wrapper] {
+          width: var(--fs-spacing-2) !important;
+          height: var(--fs-spacing-2) !important;
+          border-radius: 50% !important;
+        }
+      }
     }
   }
 

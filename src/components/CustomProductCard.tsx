@@ -109,12 +109,7 @@ function CustomProductCard({ product, index, ...otherProps }: any) {
       />
       {!outOfStock && (
         <div data-fs-product-card-actions>
-          <QuantitySelector
-            min={1}
-            initial={1}
-            max={offer.quantity}
-            onChange={(value) => setQuantity(value)}
-          />
+
           <UIButton
             variant="primary"
             size="small"
@@ -122,7 +117,7 @@ function CustomProductCard({ product, index, ...otherProps }: any) {
             iconPosition="left"
             onClick={(...args: any[]) => (buyProps.onClick as any)(...args)}
           >
-            Comprar
+            Adicionar ao carrinho
           </UIButton>
         </div>
       )}
