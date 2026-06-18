@@ -3,6 +3,7 @@ import Incentives from "./Incentives/Incentives";
 import ProductShelfWithButton from "./sections/ProductShelfWithButton";
 import WhatsAppButton from "./WhatsAppButton/WhatsAppButton";
 import Footer from "./sections/Footer";
+import ThreeCards from "./sections/ThreeCards/ThreeCards";
 
 export default {
     CarouselBanner,
@@ -10,4 +11,5 @@ export default {
     ProductShelf: ProductShelfWithButton,
     WhatsAppButton,
     Footer,
+    ThreeCards,
 };
