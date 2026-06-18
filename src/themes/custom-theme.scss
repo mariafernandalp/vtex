@@ -158,11 +158,17 @@
 
       [data-fs-product-card-actions] {
         display: flex;
-        flex-direction: row;
-        gap: var(--fs-spacing-3);
-        align-items: center;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--fs-spacing-2);
         padding: var(--fs-spacing-1) var(--fs-spacing-2) 0 0;
         width: 100%;
+
+        @include u.media(">=notebook") {
+          flex-direction: row;
+          align-items: center;
+          gap: var(--fs-spacing-3);
+        }
 
         [data-fs-quantity-selector] {
           --fs-qty-selector-width: 5.5rem;
@@ -324,6 +330,21 @@
     [data-fs-product-grid] {
       --fs-product-grid-gap-mobile                         : var(--fs-grid-gap-2);
       --fs-product-grid-gap-desktop                        : var(--fs-spacing-6);
+    }
+
+    [data-fs-product-shelf] {
+      --fs-product-shelf-items-gap                         : var(--fs-grid-gap-2);
+
+      [data-fs-product-shelf-items] {
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      [data-fs-carousel-bullets] {
+        display: none !important;
+      }
     }
 
     [data-fs-product-listing] {
