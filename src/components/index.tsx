@@ -4,6 +4,7 @@ import ProductShelfWithButton from "./sections/ProductShelfWithButton";
 import WhatsAppButton from "./WhatsAppButton/WhatsAppButton";
 import Footer from "./sections/Footer";
 import ThreeCards from "./sections/ThreeCards/ThreeCards";
+import HighlightCards from "./sections/HighlightCards/HighlightCards";
 
 export default {
     CarouselBanner,
@@ -12,4 +13,5 @@ export default {
     WhatsAppButton,
     Footer,
     ThreeCards,
+    HighlightCards,
 };

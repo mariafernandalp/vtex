@@ -1,0 +1,179 @@
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.containerWrapper {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.sectionTitle {
+  font-family: var(--fs-text-face-body);
+  font-size: 2.6rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: pre-line;
+  max-width: 480px;
+  line-height: 1.1;
+}
+
+.sectionSubtitle {
+  font-family: var(--fs-text-face-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  margin: 0;
+  text-align: left;
+  white-space: pre-line;
+  max-width: 480px;
+  line-height: 1.4;
+}
+
+.gridContainer {
+  display: grid;
+  width: 100%;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
+.mainCardLink {
+  text-decoration: none;
+  display: flex;
+  color: inherit;
+  width: 100%;
+  min-height: 400px;
+  
+  @media (min-width: 768px) {
+    min-height: 500px;
+  }
+}
+
+.sideCardLink {
+  text-decoration: none;
+  display: flex;
+  width: 100%;
+  min-height: 300px;
+
+  @media (min-width: 768px) {
+    min-height: auto; // Will stretch to match main card due to grid and align-items: stretch
+  }
+}
+
+.mainCard {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+.sideCard {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background-color: #f5f5f5;
+  height: 100%;
+}
+
+.image {
+  transition: transform 0.3s ease;
+  
+  .mainCard:hover &, .sideCard:hover & {
+    transform: scale(1.05);
+  }
+}
+
+/* Overlaid white rectangle at base */
+.overlayCard {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  z-index: 2;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem 0;
+  color: #000;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.circularButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  .mainCardLink:hover & {
+    background-color: #222;
+    transform: scale(1.05);
+  }
+}

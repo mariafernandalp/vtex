@@ -4815,6 +4815,89 @@
         }
       }
     },
+    "HighlightCards": {
+      "$extends": [
+        "#/$defs/base-component"
+      ],
+      "$componentKey": "HighlightCards",
+      "$componentTitle": "Cards em Destaque",
+      "type": "object",
+      "required": [
+        "mainCard",
+        "sideCards"
+      ],
+      "properties": {
+        "sectionTitle": {
+          "title": "Título da Seção",
+          "type": "string"
+        },
+        "sectionSubtitle": {
+          "title": "Subtítulo da Seção (Alinhado à direita)",
+          "type": "string"
+        },
+        "mainCard": {
+          "title": "Card Principal (Esquerda)",
+          "type": "object",
+          "required": [
+            "image",
+            "title",
+            "description",
+            "buttonIcon"
+          ],
+          "properties": {
+            "image": {
+              "title": "Imagem Principal",
+              "type": "string",
+              "widget": {
+                "ui:widget": "media-gallery"
+              }
+            },
+            "title": {
+              "title": "Título (Negrito)",
+              "type": "string"
+            },
+            "description": {
+              "title": "Descrição Curta",
+              "type": "string"
+            },
+            "buttonIcon": {
+              "title": "Ícone do Botão (Lucide React, ex: ArrowRight, Plus)",
+              "type": "string"
+            },
+            "linkUrl": {
+              "title": "Link de Destino",
+              "type": "string"
+            }
+          }
+        },
+        "sideCards": {
+          "title": "Cards Secundários (Apenas Imagem)",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "title": "Card Secundário",
+            "required": [
+              "image"
+            ],
+            "properties": {
+              "image": {
+                "title": "Imagem Secundária",
+                "type": "string",
+                "widget": {
+                  "ui:widget": "media-gallery"
+                }
+              },
+              "linkUrl": {
+                "title": "Link de Destino (Opcional)",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
     "ThreeCards": {
       "$extends": [
         "#/$defs/base-component"
@@ -4972,6 +5055,9 @@
           },
           {
             "$ref": "#/components/CarouselBanner"
+          },
+          {
+            "$ref": "#/components/HighlightCards"
           },
           {
             "$ref": "#/components/ThreeCards"
