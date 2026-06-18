@@ -71,6 +71,24 @@
   max-width: 480px;
   display: flex;
   flex: 1;
+
+  @media (max-width: 767px) {
+    position: sticky;
+    /* Faz os cards se sobreporem enquanto você scrolla (gaveta/wallet) */
+    
+    &:nth-child(1) {
+      top: 12vh;
+      z-index: 1;
+    }
+    &:nth-child(2) {
+      top: calc(12vh + 20px);
+      z-index: 2;
+    }
+    &:nth-child(3) {
+      top: calc(12vh + 40px);
+      z-index: 3;
+    }
+  }
 }
 
 .card {
@@ -83,12 +101,42 @@
   flex-direction: column;
   color: #fff;
   height: 100%;
+  
+  @media (max-width: 767px) {
+    min-height: 60vh;
+    box-shadow: 0 -10px 20px rgba(0,0,0,0.5); /* Sombra no topo para destacar o empilhamento */
+  }
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: #309042;
+    box-shadow: 0 12px 24px rgba(48, 144, 66, 0.15);
+
+    .imageContainer img {
+      transform: scale(1.05);
+    }
+
+    .button {
+      background-color: #309042;
+      color: #fff;
+    }
+
+    .icon {
+      color: #fff;
+    }
+  }
 }
 
 .imageContainer {
   width: 100%;
   aspect-ratio: 1 / 1;
   position: relative;
+  overflow: hidden;
+
+  img {
+    transition: transform 0.5s ease;
+  }
 }
 
 .textContent {
@@ -134,10 +182,10 @@
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 
-  &:hover {
-    background-color: #f0f0f0;
+  &:active {
+    transform: scale(0.95);
   }
 }
 
@@ -145,5 +193,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #22c55e;
+  color: #309042;
+  transition: color 0.3s ease;
 }

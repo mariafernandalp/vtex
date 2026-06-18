@@ -1,0 +1,35 @@
+.revealWrapper {
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+/* Base states (Hidden) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.fade-in {
+  opacity: 0;
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.scale-up {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Visible state */
+.visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}

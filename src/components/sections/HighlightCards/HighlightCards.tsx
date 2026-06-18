@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
 import * as lucideIcons from 'lucide-react'
 import styles from './HighlightCards.module.scss'
+import Reveal from '../../ui/Reveal/Reveal'
 
 function resolveLucideIcon(iconName: string): LucideIcon {
   const trimmed = iconName.trim()
@@ -63,7 +64,7 @@ export default function HighlightCards({ sectionTitle, sectionSubtitle, mainCard
 
   return (
     <section className={styles.section}>
-      <div className={styles.containerWrapper}>
+      <Reveal animation="fade-up" className={styles.containerWrapper}>
         {(sectionTitle || sectionSubtitle) && (
           <div className={styles.header}>
             {sectionTitle && <h2 className={styles.sectionTitle}>{sectionTitle}</h2>}
@@ -106,7 +107,7 @@ export default function HighlightCards({ sectionTitle, sectionSubtitle, mainCard
           )
         })}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }

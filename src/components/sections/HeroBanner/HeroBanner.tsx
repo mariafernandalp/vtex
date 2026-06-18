@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
 import * as lucideIcons from 'lucide-react'
 import styles from './HeroBanner.module.scss'
+import Reveal from '../../ui/Reveal/Reveal'
 
 function resolveLucideIcon(iconName: string): LucideIcon {
   const trimmed = iconName.trim()
@@ -38,7 +39,7 @@ function HeroBanner(props: HeroBannerProps) {
         className={styles.image}
       />
       <div className={styles.overlay} />
-      <div className={styles.textContent}>
+      <Reveal animation="fade-up" className={styles.textContent}>
         {title && <h2 className={styles.title}>{title}</h2>}
         {description && <p className={styles.description}>{description}</p>}
         {buttonText && (
@@ -49,7 +50,7 @@ function HeroBanner(props: HeroBannerProps) {
             </div>
           </div>
         )}
-      </div>
+      </Reveal>
     </>
   )
 

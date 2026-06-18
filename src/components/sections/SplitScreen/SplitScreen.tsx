@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './SplitScreen.module.scss'
+import Reveal from '../../ui/Reveal/Reveal'
 
 interface SplitCardProps {
   image: string
@@ -28,11 +29,11 @@ function SplitCard({ card }: { card: SplitCardProps }) {
         className={styles.image}
       />
       <div className={styles.overlay} />
-      <div className={styles.textContent}>
+      <Reveal animation="fade-up" className={styles.textContent}>
         <h2 className={styles.title}>{card.title}</h2>
         <p className={styles.description}>{card.description}</p>
         <span className={styles.linkText}>{card.buttonText}</span>
-      </div>
+      </Reveal>
     </>
   )
 

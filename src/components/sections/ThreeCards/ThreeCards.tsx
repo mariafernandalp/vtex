@@ -4,6 +4,7 @@ import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
 import * as lucideIcons from 'lucide-react'
 import styles from './ThreeCards.module.scss'
+import Reveal from '../../ui/Reveal/Reveal'
 
 function resolveLucideIcon(iconName: string): LucideIcon {
   const trimmed = iconName.trim()
@@ -32,7 +33,7 @@ function ThreeCards({ sectionTitle, sectionSubtitle, cards }: ThreeCardsProps) {
 
   return (
     <section className={styles.threeCardsSection}>
-      <div className={styles.threeCardsContainer}>
+      <Reveal animation="fade-up" className={styles.threeCardsContainer}>
         {(sectionTitle || sectionSubtitle) && (
           <div className={styles.sectionHeader}>
             {sectionTitle && <h2 className={styles.sectionTitle}>{sectionTitle}</h2>}
@@ -77,7 +78,7 @@ function ThreeCards({ sectionTitle, sectionSubtitle, cards }: ThreeCardsProps) {
           return <div key={index} className={styles.link}>{content}</div>
         })}
         </div>
-      </div>
+      </Reveal>
     </section>
   )
 }
