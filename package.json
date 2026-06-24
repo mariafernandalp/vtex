@@ -11,7 +11,7 @@
     "test": "faststore test"
   },
   "dependencies": {
-    "@faststore/cli": "^4.2.0",
+    "@faststore/cli": "^4.3.0",
     "@vtex/cli-plugin-content": "^1.7.2",
     "graphql": "^16.11.0",
     "lucide-react": "^1.20.0",
