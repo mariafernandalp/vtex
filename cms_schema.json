@@ -5004,6 +5004,57 @@
         }
       }
     },
+    "PhotoGrid": {
+      "$extends": [
+        "#/$defs/base-component"
+      ],
+      "$componentKey": "PhotoGrid",
+      "$componentTitle": "Grade de Fotos",
+      "type": "object",
+      "required": [
+        "photos"
+      ],
+      "properties": {
+        "sectionTitle": {
+          "title": "Título da Seção (Opcional)",
+          "type": "string"
+        },
+        "sectionSubtitle": {
+          "title": "Subtítulo da Seção (Opcional)",
+          "type": "string"
+        },
+        "photos": {
+          "title": "Fotos",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "title": "Foto",
+            "required": [
+              "image"
+            ],
+            "properties": {
+              "image": {
+                "title": "Imagem",
+                "type": "string",
+                "widget": {
+                  "ui:widget": "media-gallery"
+                }
+              },
+              "title": {
+                "title": "Título (aparece ao passar o mouse)",
+                "type": "string"
+              },
+              "linkUrl": {
+                "title": "Link de Destino",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
     "SplitScreen": {
       "$extends": [
         "#/$defs/base-component"
@@ -5262,6 +5313,9 @@
           },
           {
             "$ref": "#/components/HighlightCards"
+          },
+          {
+            "$ref": "#/components/PhotoGrid"
           },
           {
             "$ref": "#/components/SplitScreen"

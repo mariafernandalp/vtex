@@ -8,6 +8,7 @@ import HighlightCards from "./sections/HighlightCards/HighlightCards";
 import SplitScreen from "./sections/SplitScreen/SplitScreen";
 import HeroBanner from "./sections/HeroBanner/HeroBanner";
 import FourCards from "./sections/FourCards/FourCards";
+import PhotoGrid from "./sections/PhotoGrid/PhotoGrid";
 
 export default {
     CarouselBanner,
@@ -20,4 +21,5 @@ export default {
     SplitScreen,
     HeroBanner,
     FourCards,
+    PhotoGrid,
 };
