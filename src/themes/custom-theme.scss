@@ -540,7 +540,7 @@
       width: 100%;
       background: transparent;
       overflow: hidden;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 4 / 3;
       line-height: 0;
       display: block;
     }
@@ -553,7 +553,7 @@
         display: none;
       }
       .carousel-slide-container {
-        aspect-ratio: 1440 / 440;
+        aspect-ratio: 2.5 / 1;
       }
     }
 

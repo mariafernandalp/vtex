@@ -1,10 +1,23 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
+import type { ImageLoaderProps } from 'next/image'
 import Link from 'next/link'
 import { Carousel } from '@faststore/ui'
 
 // Ensure standard Carousel styles are loaded
 import '@faststore/ui/src/components/molecules/Carousel/styles.scss'
+
+function vtexImageLoader({ src, width, quality }: ImageLoaderProps) {
+  try {
+    const url = new URL(src)
+    url.searchParams.set('width', width.toString())
+    url.searchParams.set('aspect', 'true')
+    url.searchParams.set('quality', String(quality ?? 90))
+    return url.toString()
+  } catch {
+    return src
+  }
+}
 
 interface BannerItem {
   title: string
@@ -70,8 +83,10 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
                     src={banner.imageUrl}
                     alt={banner.title}
                     fill
-                    sizes="(max-width: 1440px) 100vw, 1440px"
+                    sizes="(max-width: 2752px) 100vw, 2752px"
                     priority={index === 0}
+                    quality={90}
+                    loader={vtexImageLoader}
                     style={{ objectFit: 'cover' }}
                   />
                   <Image
@@ -81,6 +96,8 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
                     fill
                     sizes="100vw"
                     priority={index === 0}
+                    quality={90}
+                    loader={vtexImageLoader}
                     style={{ objectFit: 'cover' }}
                   />
                 </div>
