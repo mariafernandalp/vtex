@@ -10,9 +10,12 @@ import '@faststore/ui/src/components/molecules/Carousel/styles.scss'
 function vtexImageLoader({ src, width, quality }: ImageLoaderProps) {
   try {
     const url = new URL(src)
-    url.searchParams.set('width', width.toString())
+    // Request at higher resolution to match source image quality (2752x1536)
+    // and avoid upscaling on large screens (deviceSizes max out at 1440)
+    const targetWidth = width >= 1280 ? Math.max(width, 2752) : width
+    url.searchParams.set('width', targetWidth.toString())
     url.searchParams.set('aspect', 'true')
-    url.searchParams.set('quality', String(quality ?? 90))
+    url.searchParams.set('quality', String(quality ?? 100))
     return url.toString()
   } catch {
     return src
@@ -85,7 +88,7 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
                     fill
                     sizes="(max-width: 2752px) 100vw, 2752px"
                     priority={index === 0}
-                    quality={90}
+                    quality={100}
                     loader={vtexImageLoader}
                     style={{ objectFit: 'cover' }}
                   />
@@ -96,7 +99,7 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
                     fill
                     sizes="100vw"
                     priority={index === 0}
-                    quality={90}
+                    quality={100}
                     loader={vtexImageLoader}
                     style={{ objectFit: 'cover' }}
                   />
