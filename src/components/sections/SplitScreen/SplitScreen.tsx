@@ -53,8 +53,10 @@ function SplitScreen({ leftCard, rightCard }: SplitScreenProps) {
 
   return (
     <section className={styles.splitScreenSection}>
-      <SplitCard card={leftCard} />
-      <SplitCard card={rightCard} />
+      <div className={styles.container}>
+        <SplitCard card={leftCard} />
+        <SplitCard card={rightCard} />
+      </div>
     </section>
   )
 }

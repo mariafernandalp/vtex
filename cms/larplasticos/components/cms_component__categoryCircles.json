@@ -1,0 +1,63 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "CategoryCircles",
+  "$componentTitle": "Círculos de Categorias (6)",
+  "type": "object",
+  "required": [
+    "layout",
+    "categories"
+  ],
+  "properties": {
+    "layout": {
+      "title": "Layout",
+      "type": "string",
+      "default": "circles",
+      "enum": [
+        "circles",
+        "cards"
+      ],
+      "enumNames": [
+        "Círculos (6 na mesma linha)",
+        "Cards (3 em cima, 3 embaixo)"
+      ]
+    },
+    "sectionTitle": {
+      "title": "Título da Seção (Opcional)",
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "title": "Subtítulo da Seção (Opcional)",
+      "type": "string"
+    },
+    "categories": {
+      "title": "Categorias (6 círculos)",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "title": "Categoria",
+        "required": ["image", "title"],
+        "properties": {
+          "image": {
+            "title": "Imagem do Círculo",
+            "type": "string",
+            "widget": {
+              "ui:widget": "media-gallery"
+            }
+          },
+          "title": {
+            "title": "Nome da Categoria",
+            "type": "string"
+          },
+          "linkUrl": {
+            "title": "Link de Destino",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
