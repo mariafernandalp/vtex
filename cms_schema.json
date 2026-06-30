@@ -4981,6 +4981,75 @@
         }
       }
     },
+    "HeroSplit": {
+      "$extends": [
+        "#/$defs/base-component"
+      ],
+      "$componentKey": "HeroSplit",
+      "$componentTitle": "Hero Split (Foto + Conteúdo)",
+      "type": "object",
+      "required": [
+        "image",
+        "title"
+      ],
+      "properties": {
+        "image": {
+          "title": "Fotografia Aérea",
+          "type": "string",
+          "widget": {
+            "ui:widget": "media-gallery"
+          }
+        },
+        "imageAlt": {
+          "title": "Texto Alternativo da Imagem",
+          "type": "string"
+        },
+        "geolocationIcon": {
+          "title": "Ícone de Geolocalização (Lucide React, ex: MapPin)",
+          "type": "string"
+        },
+        "geolocationText": {
+          "title": "Texto de Geolocalização (ex: Brasil, São Paulo - SP)",
+          "type": "string"
+        },
+        "title": {
+          "title": "Título Principal (use ||palavra|| para destacar em verde)",
+          "type": "string"
+        },
+        "description": {
+          "title": "Texto de Apoio (frase curta, cor cinza)",
+          "type": "string"
+        },
+        "authorityLabel1": {
+          "title": "Indicador 1 - Número/Destaque (ex: 15+ ANOS)",
+          "type": "string"
+        },
+        "authorityDescription1": {
+          "title": "Indicador 1 - Descrição (ex: DE LIDERANÇA)",
+          "type": "string"
+        },
+        "authorityLabel2": {
+          "title": "Indicador 2 - Número/Destaque (ex: 10k TON)",
+          "type": "string"
+        },
+        "authorityDescription2": {
+          "title": "Indicador 2 - Descrição (ex: / MÊS)",
+          "type": "string"
+        },
+        "buttonText": {
+          "title": "Texto do Botão (Chamada para ação)",
+          "type": "string"
+        },
+        "buttonIcon": {
+          "title": "Ícone do Botão (Lucide React, ex: ArrowRight)",
+          "type": "string"
+        },
+        "linkUrl": {
+          "title": "Link de Destino",
+          "type": "string"
+        }
+      }
+    },
     "HighlightCards": {
       "$extends": [
         "#/$defs/base-component"
@@ -5379,6 +5448,9 @@
           },
           {
             "$ref": "#/components/HeroBanner"
+          },
+          {
+            "$ref": "#/components/HeroSplit"
           },
           {
             "$ref": "#/components/HighlightCards"
