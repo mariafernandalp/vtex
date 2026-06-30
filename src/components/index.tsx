@@ -10,6 +10,7 @@ import HeroBanner from "./sections/HeroBanner/HeroBanner";
 import FourCards from "./sections/FourCards/FourCards";
 import PhotoGrid from "./sections/PhotoGrid/PhotoGrid";
 import CategoryCircles from "./sections/CategoryCircles/CategoryCircles";
+import ProductTiles from "./sections/ProductTiles/ProductTiles";
 
 export default {
     CarouselBanner,
@@ -24,4 +25,6 @@ export default {
     FourCards,
     PhotoGrid,
     CategoryCircles,
+    ProductTiles,
 };
+
