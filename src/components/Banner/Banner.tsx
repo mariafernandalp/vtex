@@ -58,25 +58,25 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
       className="section-carousel-banner"
       aria-label="Main Banner Carousel"
       style={{
-        width: '100%',
-        display: 'block'
+        width: '100%'
       }}
     >
-      <div
-        ref={carouselRef}
-        style={{
-          width: '100%',
-          boxSizing: 'border-box'
-        }}
-      >
+      <div className="carousel-banner-container">
         <div
+          ref={carouselRef}
           style={{
             width: '100%',
-            overflow: 'hidden',
             boxSizing: 'border-box'
           }}
         >
-          <Carousel id="hero-carousel" itemsPerPage={1} variant="slide" infiniteMode controls="complete">
+          <div
+            style={{
+              width: '100%',
+              overflow: 'hidden',
+              boxSizing: 'border-box'
+            }}
+          >
+            <Carousel id="hero-carousel" itemsPerPage={1} variant="slide" infiniteMode controls="complete">
             {banners.map((banner, index) => {
               const mobileImg = banner.imageUrlMobile || banner.imageUrl
               const slide = (
@@ -121,6 +121,7 @@ function CarouselBanner({ banners }: CarouselBannerProps) {
             })}
           </Carousel>
         </div>
+      </div>
       </div>
     </section>
   )

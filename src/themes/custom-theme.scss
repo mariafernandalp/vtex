@@ -543,6 +543,17 @@
   }
 
   .section-carousel-banner {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+
+    .carousel-banner-container {
+      width: 100%;
+      max-width: 1320px;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
     .carousel-image-desktop {
       display: none;
     }
@@ -568,7 +579,7 @@
         display: none;
       }
       .carousel-slide-container {
-        aspect-ratio: 2.7 / 1;
+        aspect-ratio: 2 / 1;
       }
     }
 
@@ -593,7 +604,7 @@
 
     [data-fs-carousel-track-container] {
       overflow: hidden;
-      border-radius: 0;
+      border-radius: var(--fs-border-radius);
     }
 
     [data-fs-carousel-controls] {
