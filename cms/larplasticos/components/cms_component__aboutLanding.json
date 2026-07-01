@@ -1,0 +1,148 @@
+{
+  "$extends": ["#/$defs/base-component"],
+  "$componentKey": "AboutLanding",
+  "$componentTitle": "Landing Quem Somos",
+  "type": "object",
+  "required": ["heroTitle"],
+  "properties": {
+    "heroImage": {
+      "title": "Imagem de Fundo (Hero)",
+      "type": "string",
+      "widget": { "ui:widget": "media-gallery" }
+    },
+    "heroTitle": {
+      "title": "Título Principal (Hero)",
+      "type": "string"
+    },
+    "heroSubtitle": {
+      "title": "Subtítulo / Slogan",
+      "type": "string"
+    },
+    "aboutImage": {
+      "title": "Imagem da Seção Sobre",
+      "type": "string",
+      "widget": { "ui:widget": "media-gallery" }
+    },
+    "aboutTitle": {
+      "title": "Título da Seção Sobre",
+      "type": "string"
+    },
+    "aboutText": {
+      "title": "Texto Sobre (Descrição)",
+      "type": "string"
+    },
+    "aboutImagePosition": {
+      "title": "Posição da Imagem",
+      "type": "string",
+      "enum": ["left", "right"],
+      "enumNames": ["Esquerda", "Direita"],
+      "default": "right"
+    },
+    "statsTitle": {
+      "title": "Título da Seção de Números",
+      "type": "string"
+    },
+    "stats": {
+      "title": "Estatísticas / Números",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Estatística",
+        "required": ["number", "label"],
+        "properties": {
+          "icon": {
+            "title": "Ícone (Lucide React, ex: Factory, Users)",
+            "type": "string"
+          },
+          "number": {
+            "title": "Número (ex: 26)",
+            "type": "string"
+          },
+          "suffix": {
+            "title": "Sufixo (ex: mil m²)",
+            "type": "string"
+          },
+          "label": {
+            "title": "Descrição (ex: Área Fabril)",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "valuesTitle": {
+      "title": "Título da Seção Valores",
+      "type": "string"
+    },
+    "values": {
+      "title": "Valores / Pilares",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Valor",
+        "required": ["title"],
+        "properties": {
+          "icon": {
+            "title": "Ícone (Lucide React)",
+            "type": "string"
+          },
+          "title": {
+            "title": "Título",
+            "type": "string"
+          },
+          "description": {
+            "title": "Descrição",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "galleryTitle": {
+      "title": "Título da Galeria",
+      "type": "string"
+    },
+    "gallery": {
+      "title": "Galeria de Fotos",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "Foto",
+        "required": ["image"],
+        "properties": {
+          "image": {
+            "title": "Imagem",
+            "type": "string",
+            "widget": { "ui:widget": "media-gallery" }
+          },
+          "size": {
+            "title": "Tamanho",
+            "type": "string",
+            "enum": ["small", "medium", "large", "wide", "tall"],
+            "enumNames": ["Pequeno", "Médio", "Grande", "Largo", "Alto"],
+            "default": "medium"
+          }
+        }
+      }
+    },
+    "ctaBackground": {
+      "title": "Imagem de Fundo (CTA Final)",
+      "type": "string",
+      "widget": { "ui:widget": "media-gallery" }
+    },
+    "ctaTitle": {
+      "title": "Título do CTA Final",
+      "type": "string"
+    },
+    "ctaText": {
+      "title": "Texto do CTA Final",
+      "type": "string"
+    },
+    "ctaButtonText": {
+      "title": "Texto do Botão (CTA)",
+      "type": "string"
+    },
+    "ctaButtonLink": {
+      "title": "Link do Botão (CTA)",
+      "type": "string"
+    }
+  }
+}

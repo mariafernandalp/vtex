@@ -13,6 +13,7 @@ import CategoryCircles from "./sections/CategoryCircles/CategoryCircles";
 import ProductTiles from "./sections/ProductTiles/ProductTiles";
 import HeroSplit from "./sections/HeroSplit/HeroSplit";
 import IncentivesGrid from "./sections/IncentivesGrid/IncentivesGrid";
+import AboutLanding from "./sections/AboutLanding/AboutLanding";
 
 export default {
     CarouselBanner,
@@ -30,5 +31,6 @@ export default {
     ProductTiles,
     HeroSplit,
     IncentivesGrid,
+    AboutLanding,
 };
 
