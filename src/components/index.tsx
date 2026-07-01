@@ -12,6 +12,7 @@ import PhotoGrid from "./sections/PhotoGrid/PhotoGrid";
 import CategoryCircles from "./sections/CategoryCircles/CategoryCircles";
 import ProductTiles from "./sections/ProductTiles/ProductTiles";
 import HeroSplit from "./sections/HeroSplit/HeroSplit";
+import IncentivesGrid from "./sections/IncentivesGrid/IncentivesGrid";
 
 export default {
     CarouselBanner,
@@ -28,5 +29,6 @@ export default {
     CategoryCircles,
     ProductTiles,
     HeroSplit,
+    IncentivesGrid,
 };
 

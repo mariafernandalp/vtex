@@ -1,0 +1,43 @@
+{
+  "$extends": [
+    "#/$defs/base-component"
+  ],
+  "$componentKey": "IncentivesGrid",
+  "$componentTitle": "Grade de Incentivos (4 itens)",
+  "type": "object",
+  "required": ["incentives"],
+  "properties": {
+    "sectionTitle": {
+      "title": "Título da Seção (Opcional)",
+      "type": "string"
+    },
+    "sectionSubtitle": {
+      "title": "Subtítulo da Seção (Opcional)",
+      "type": "string"
+    },
+    "incentives": {
+      "title": "Incentivos (Mínimo 4)",
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "title": "Incentivo",
+        "required": ["icon", "title", "subtitle"],
+        "properties": {
+          "icon": {
+            "title": "Ícone (Lucide React, ex: Truck, ShieldCheck, CreditCard)",
+            "type": "string"
+          },
+          "title": {
+            "title": "Título (Negrito)",
+            "type": "string"
+          },
+          "subtitle": {
+            "title": "Subtítulo",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

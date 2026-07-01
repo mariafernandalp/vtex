@@ -51,17 +51,50 @@
   justify-items: center;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    display: flex;
+    gap: 1.25rem; /* Ajuste o espaço real entre um círculo e outro aqui */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0 1rem 0.75rem 1rem; /* Adiciona um respiro nas laterais físicas da tela */
+    grid-template-columns: unset;
+    justify-items: unset;
+    width: 100%;
 
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
+    /* ISSO AQUI resolve o problema do espaçamento gigante */
+    & > * {
+      flex-shrink: 0;
+      width: 85px !important; /* Força o elemento pai (Link/Div) a ter o tamanho exato do círculo */
+      scroll-snap-align: start;
+    }
+
+    .link,
+    .circle {
+      gap: 0.5rem;
+      width: 100%; /* Agora ele vai respeitar os 85px do pai acima */
+    }
+
+    .imageWrapperCircles {
+      max-width: 85px; /* Deixa o círculo do mesmo tamanho do container */
+      width: 100%;
+    }
+
+    .labelCircles {
+      font-size: 0.75rem;
+      line-height: 1.2;
+      white-space: nowrap; /* Evita que quebre linha desnecessariamente se o nome for um pouco maior */
+    }
   }
 }
 
 .gridCards {
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 1rem; /* Adicionado um gap padrão para não colarem na versão desktop */
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* Quebra em 1 coluna no mobile (estava esmagando em 3) */
+    gap: 1rem;
+  }
 }
 
 .link {
@@ -114,6 +147,10 @@
   overflow: hidden;
   position: relative;
   background: #f5f5f5;
+
+  @media (max-width: 768px) {
+    aspect-ratio: 16 / 9; /* Proporção melhor para card inteiro no mobile */
+  }
 }
 
 .image {
@@ -165,7 +202,28 @@
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
 
+  @media (max-width: 768px) {
+    font-size: 1.1rem; /* Diminuído levemente para não quebrar texto longo no mobile */
+    bottom: 1rem;
+    left: 1rem;
+  }
+
   .link:hover & {
     color: var(--fs-color-main-2, #309042);
+  }
+}
+
+/* Ajustes gerais de espaçamento da estrutura no Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 1rem; /* Reduz o espaçamento do topo/fundo da seção */
+  }
+
+  .container {
+    gap: 1.5rem; /* Diminui o espaço entre o Header e as Grids */
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem; /* Título principal menor no celular */
   }
 }
