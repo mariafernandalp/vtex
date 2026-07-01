@@ -42,7 +42,7 @@ function CategoryCircles({ layout = 'circles', sectionTitle, sectionSubtitle, ca
                     fill
                     sizes="50vw"
                     className={styles.image}
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: isCards ? 'cover' : 'contain' }}
                   />
                 </div>
                 {isCards && <div className={styles.overlay} />}
