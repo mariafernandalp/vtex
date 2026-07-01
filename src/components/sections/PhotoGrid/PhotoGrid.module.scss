@@ -49,6 +49,16 @@
   }
 }
 
+.gridHorizontal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .grid3 {
   @media (min-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
@@ -80,6 +90,10 @@
       opacity: 1;
     }
   }
+}
+
+.cardHorizontal {
+  aspect-ratio: 4 / 3;
 }
 
 .image {

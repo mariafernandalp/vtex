@@ -5207,11 +5207,23 @@
           "title": "Subtítulo da Seção (Opcional)",
           "type": "string"
         },
+        "layout": {
+          "title": "Layout",
+          "type": "string",
+          "default": "vertical",
+          "enum": [
+            "vertical",
+            "horizontal"
+          ],
+          "enumNames": [
+            "Vertical (3:4, até 4 fotos)",
+            "Horizontal (4:3, até 2 fotos)"
+          ]
+        },
         "photos": {
           "title": "Fotos",
           "type": "array",
           "minItems": 2,
-          "maxItems": 4,
           "items": {
             "type": "object",
             "title": "Foto",
@@ -5235,6 +5247,27 @@
                 "type": "string"
               }
             }
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "layout": {
+            "const": "horizontal"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "photos": {
+            "maxItems": 2
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "photos": {
+            "maxItems": 4
           }
         }
       }

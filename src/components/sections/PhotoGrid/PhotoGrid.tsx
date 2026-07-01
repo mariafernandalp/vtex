@@ -13,13 +13,16 @@ interface PhotoItem {
 interface PhotoGridProps {
   sectionTitle?: string
   sectionSubtitle?: string
+  layout?: string
   photos: PhotoItem[]
 }
 
-function PhotoGrid({ sectionTitle, sectionSubtitle, photos }: PhotoGridProps) {
+function PhotoGrid({ sectionTitle, sectionSubtitle, layout = 'vertical', photos }: PhotoGridProps) {
   if (!photos || photos.length < 2) return null
 
-  const count = Math.min(photos.length, 4)
+  const isHorizontal = layout === 'horizontal'
+  const maxPhotos = isHorizontal ? 2 : 4
+  const count = Math.min(photos.length, maxPhotos)
   const gridClass = count === 3 ? styles.grid3 : ''
 
   return (
@@ -31,10 +34,10 @@ function PhotoGrid({ sectionTitle, sectionSubtitle, photos }: PhotoGridProps) {
             {sectionSubtitle && <p className={styles.sectionSubtitle}>{sectionSubtitle}</p>}
           </div>
         )}
-        <div className={`${styles.grid} ${gridClass}`}>
-          {photos.slice(0, 4).map((photo, index) => {
+        <div className={`${styles.grid} ${isHorizontal ? styles.gridHorizontal : gridClass}`}>
+          {photos.slice(0, maxPhotos).map((photo, index) => {
             const content = (
-              <div className={styles.card}>
+              <div className={`${styles.card} ${isHorizontal ? styles.cardHorizontal : ''}`}>
                 <Image
                   src={photo.image}
                   alt={photo.title ?? ''}
