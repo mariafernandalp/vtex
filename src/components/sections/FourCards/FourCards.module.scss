@@ -91,12 +91,10 @@
 
   &:hover {
     .image {
-      transform: scale(1.08);
+      transform: scale(1.03);
     }
 
-    .circularButton {
-      background-color: var(--fs-color-main-2, #309042);
-      color: #fff;
+    .iconWrapper {
       transform: scale(1.1);
     }
   }
@@ -131,22 +129,18 @@
 
 .title {
   font-weight: 800;
-  font-size: 2rem;
-  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  margin: 0;
   color: #fff;
   line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.circularButton {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #fff;
-  color: #000;
+.iconWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  color: #fff;
+  margin-bottom: 1rem;
 }

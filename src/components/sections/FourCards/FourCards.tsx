@@ -54,12 +54,12 @@ function FourCards({ sectionTitle, sectionSubtitle, cards }: FourCardsProps) {
                 />
                 <div className={styles.overlay} />
                 <div className={styles.textContent}>
-                  <h3 className={styles.title}>{card.title}</h3>
                   {Icon && (
-                    <div className={styles.circularButton}>
-                      <Icon size={20} strokeWidth={2.5} />
+                    <div className={styles.iconWrapper}>
+                      <Icon size={56} strokeWidth={1.5} />
                     </div>
                   )}
+                  <h3 className={styles.title}>{card.title}</h3>
                 </div>
               </div>
             )
